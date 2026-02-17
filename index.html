@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Dr. Gonzalo Granado — Psicofarmacología y tratamientos avanzados. Psiquiatría clínica, consultoría y segunda opinión. Atención presencial y online en Yerba Buena y Concepción, Tucumán." />
+  <title>Dr. Gonzalo Granado — Psicofarmacología</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#fbfbfb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --accent:#12b981;
+      --accent2:#0ea5a4;
+      --shadow: 0 10px 30px rgba(17,24,39,.06);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 700px at 15% 0%, rgba(18,185,129,.08), transparent 55%),
+                  radial-gradient(1000px 600px at 100% 10%, rgba(14,165,164,.06), transparent 55%),
+                  var(--bg);
+      line-height:1.45;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px;}
+    .nav{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(251,251,251,.72);
+      border-bottom:1px solid rgba(229,231,235,.7);
+    }
+    .nav-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:600;
+      letter-spacing:-.02em;
+      white-space:nowrap;
+    }
+    .mark{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(18,185,129,.16), rgba(14,165,164,.16));
+      border:1px solid rgba(18,185,129,.18);
+      display:grid; place-items:center;
+      flex: 0 0 auto;
+    }
+    .mark::after{
+      content:"";
+      width:14px; height:14px; border-radius:6px;
+      border:2px solid rgba(18,185,129,.7);
+      transform: rotate(25deg);
+    }
+    .nav-links{
+      display:flex; gap:10px; flex-wrap:wrap;
+      font-size:14px; color:var(--muted);
+      justify-content:center;
+    }
+    .nav-links a{padding:8px 10px; border-radius:12px}
+    .nav-links a:hover{background:rgba(17,24,39,.04); color:var(--text)}
+    .cta{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: var(--card);
+      box-shadow: 0 1px 0 rgba(17,24,39,.03);
+      font-weight:600;
+      font-size:14px;
+      transition: transform .08s ease, background .12s ease, border-color .12s ease;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(18,185,129,.35)}
+    .btn.primary{
+      border-color: rgba(18,185,129,.35);
+      background: linear-gradient(135deg, rgba(18,185,129,.12), rgba(14,165,164,.10));
+    }
+    .hero{
+      padding:42px 0 26px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .card{
+      background: rgba(255,255,255,.78);
+      border:1px solid rgba(229,231,235,.8);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+    }
+    .kicker{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:rgba(18,185,129,.85);
+      font-weight:700;
+    }
+    h1{
+      margin:8px 0 2px;
+      font-size:42px;
+      line-height:1.05;
+      letter-spacing:-.05em;
+    }
+    .name{
+      margin:10px 0 0;
+      font-size:18px;
+      color:var(--muted);
+      font-weight:600;
+    }
+    .sub{
+      margin:14px 0 0;
+      color:var(--muted);
+      font-size:15px;
+    }
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+    .chip{
+      padding:8px 10px;
+      border:1px solid rgba(229,231,235,.9);
+      border-radius:999px;
+      background: rgba(255,255,255,.8);
+      color: rgba(17,24,39,.78);
+      font-size:13px;
+    }
+    .hero-actions{margin-top:18px; display:flex; gap:10px; flex-wrap:wrap}
+    .side{display:flex; flex-direction:column; gap:14px;}
+    .logo-box{
+      display:flex; align-items:center; justify-content:center;
+      min-height:180px;
+      background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
+      border:1px dashed rgba(18,185,129,.28);
+    }
+    .logo-box img{max-width:92%; height:auto; display:block;}
+    .mini{display:grid; gap:8px; color:var(--muted); font-size:14px;}
+    .mini strong{color:var(--text)}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .span-6{grid-column: span 6;}
+    .span-7{grid-column: span 7;}
+    .span-5{grid-column: span 5;}
+    .span-12{grid-column: span 12;}
+    h2{margin:0 0 10px; font-size:20px; letter-spacing:-.02em;}
+    p{margin:0 0 12px}
+    .muted{color:var(--muted)}
+    ul{margin:0; padding-left:18px; color:var(--muted)}
+    li{margin:6px 0}
+    .service{
+      padding:16px;
+      border-radius: 16px;
+      border:1px solid rgba(229,231,235,.85);
+      background: rgba(255,255,255,.70);
+    }
+    .service h3{margin:0 0 6px; font-size:15px; letter-spacing:-.01em;}
+    .service p{margin:0; font-size:14px; color:var(--muted)}
+    .form{display:grid; gap:10px;}
+    label{font-size:13px; color: rgba(17,24,39,.72); font-weight:600; margin-top:2px;}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(229,231,235,.95);
+      background: rgba(255,255,255,.9);
+      font: inherit;
+      outline: none;
+      transition: border-color .12s ease;
+    }
+    input:focus, select:focus, textarea:focus{border-color: rgba(18,185,129,.5);}
+    textarea{min-height:110px; resize: vertical}
+    .form-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:4px;}
+    .note{
+      font-size:12px; color: var(--muted);
+      margin-top:10px;
+      border-top:1px solid rgba(229,231,235,.8);
+      padding-top:10px;
+    }
+    .pub-item{
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid rgba(229,231,235,.85);
+      background: rgba(255,255,255,.72);
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .pub-item .meta{font-size:12px; color:var(--muted)}
+    .pub-item .title{font-weight:600; letter-spacing:-.01em}
+    .pub-item .desc{font-size:14px; color:var(--muted)}
+    footer{margin-top:26px; color: var(--muted); font-size:12px; text-align:center;}
+    @media (max-width: 920px){
+      .hero{grid-template-columns: 1fr; padding-top:26px}
+      h1{font-size:36px}
+      .span-6,.span-7,.span-5{grid-column: span 12;}
+      .nav-links{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>Dr. Gonzalo Granado</div>
+      </div>
+
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#como-trabajo">Cómo trabajo</a>
+        <a href="#publicaciones">Publicaciones</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn" href="https://app.panaceamed.com.ar/citaapp/" target="_blank" rel="noopener">Turnos online</a>
+        <a class="btn primary" href="https://wa.me/5493815395873" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="card">
+        <div class="kicker">Psicofarmacología</div>
+        <h1>Tratamientos avanzados en trastornos del ánimo y ansiedad, con base científica y seguimiento cercano.</h1>
+        <div class="name">Dr. Gonzalo Granado</div>
+        <p class="sub">
+          Psiquiatría clínica · Consultoría · Segunda opinión<br/>
+          Atención presencial y online · Adultos y adolescentes
+        </p>
+
+        <div class="chips">
+          <div class="chip">Yerba Buena (Tucumán)</div>
+          <div class="chip">Concepción (Tucumán)</div>
+          <div class="chip">Presencial y online</div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contacto">Consultar por WhatsApp</a>
+          <a class="btn" href="https://app.panaceamed.com.ar/citaapp/" target="_blank" rel="noopener">Turnos online</a>
+          <a class="btn" href="#servicios">Ver servicios</a>
+          <a class="btn" href="depresion-resistente-ketamina.html">Depresión resistente</a>
+        </div>
+
+        <div class="note">
+          Si se trata de una urgencia o riesgo inmediato, acudir al servicio de guardia más cercano.
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="card logo-box" aria-label="Logo">
+          <img src="logo.png" alt="Logo Dr. Gonzalo Granado" />
+        </div>
+
+        <div class="card mini">
+          <div><strong>Modalidad:</strong> Presencial y online</div>
+          <div><strong>Población:</strong> Adultos y adolescentes</div>
+          <div><strong>Enfoque:</strong> clínico y neurobiológico</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID CONTENT -->
+    <section class="grid">
+      <!-- SOBRE MI -->
+      <div class="card span-7" id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <p class="muted">
+          Soy médico psiquiatra con enfoque clínico y neurobiológico. Trabajo con evaluación diagnóstica cuidadosa,
+          seguimiento longitudinal y tratamientos basados en evidencia, integrando psicofarmacología y coordinación con
+          psicoterapia cuando corresponde.
+        </p>
+        <p class="muted" style="margin-bottom:0">
+          El objetivo es ofrecer un espacio profesional, claro y humano: comprender el problema en profundidad y construir
+          un plan realista, medible y sostenido en el tiempo.
+        </p>
+      </div>
+
+      <!-- COMO TRABAJO -->
+      <div class="card span-5" id="como-trabajo">
+        <h2>Cómo trabajo</h2>
+        <ul>
+          <li><strong>Primera entrevista:</strong> historia clínica, síntomas, objetivos y contexto.</li>
+          <li><strong>Formulación y plan:</strong> hipótesis diagnóstica + opciones terapéuticas.</li>
+          <li><strong>Seguimiento:</strong> respuesta clínica, efectos adversos y ajustes.</li>
+          <li><strong>Coordinación:</strong> con psicoterapia y otros profesionales cuando aporta valor.</li>
+        </ul>
+      </div>
+
+      <!-- UBICACION -->
+      <div class="card span-6" id="ubicacion">
+        <h2>Ubicación</h2>
+        <p class="muted" style="margin-bottom:10px">Atención presencial en:</p>
+        <ul>
+          <li><strong>Yerba Buena</strong> · Tucumán</li>
+          <li><strong>Concepción</strong> · Tucumán</li>
+        </ul>
+        <p class="muted" style="margin-top:12px; margin-bottom:0">
+          También atención <strong>online</strong> para pacientes que lo requieran.
+        </p>
+      </div>
+
+      <!-- CONTACTO + FORM -->
+      <div class="card span-6" id="contacto">
+        <h2>Contacto</h2>
+        <p class="muted" style="margin-top:-2px">
+          Completá el formulario y se abre WhatsApp con tu consulta lista para enviar.
+        </p>
+
+        <form class="form" id="waForm">
+          <div>
+            <label for="nombre">Nombre y apellido</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Ej: María Pérez" required />
+          </div>
+
+          <div>
+            <label for="modalidad">Modalidad</label>
+            <select id="modalidad" name="modalidad" required>
+              <option value="" selected disabled>Elegir</option>
+              <option value="Presencial">Presencial</option>
+              <option value="Online">Online</option>
+              <option value="Indistinto">Indistinto</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="motivo">Motivo de consulta (breve)</label>
+            <input id="motivo" name="motivo" type="text" placeholder="Ej: ansiedad / insomnio / estado de ánimo / segunda opinión" required />
+          </div>
+
+          <div>
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Contame en pocas líneas lo principal, desde cuándo y si estás con medicación actualmente."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Enviar por WhatsApp</button>
+            <a class="btn" href="https://app.panaceamed.com.ar/citaapp/" target="_blank" rel="noopener">Turnos online</a>
+            <a class="btn" href="https://wa.me/5493815395873" target="_blank" rel="noopener">Abrir WhatsApp</a>
+          </div>
+
+          <div class="note">
+            Este canal no reemplaza guardia/urgencias. Ante riesgo inmediato, llamar a emergencias o acudir a un servicio de urgencias.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Dr. Gonzalo Granado · Psicofarmacología · Yerba Buena & Concepción (Tucumán)
+    </footer>
+  </main>
+
+  <script>
+    (function(){
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const PHONE = "5493815395873";
+
+      document.getElementById("waForm").addEventListener("submit", function(e){
+        e.preventDefault();
+
+        const nombre = document.getElementById("nombre").value.trim();
+        const modalidad = document.getElementById("modalidad").value;
+        const motivo = document.getElementById("motivo").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
+
+        const texto =
+`Hola Dr. Gonzalo Granado, soy ${nombre}.
+Modalidad: ${modalidad}.
+Motivo: ${motivo}.
+${mensaje ? "\nMensaje: " + mensaje : ""}
+
+¿Podemos coordinar un turno?`;
+
+        const url = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(texto);
+        window.open(url, "_blank", "noopener");
+      });
+    })();
+  </script>
+</body>
+</html>
