@@ -692,11 +692,36 @@
       nav { padding: 0 1rem; }
       .nav-links { display: none; }
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-photo, .hero-photo-placeholder { display: none; }
+      .hero-photo { display: none; }
       .sobre-grid, .ubicacion-grid, .contacto-grid { grid-template-columns: 1fr; gap: 2rem; }
       .hero { padding: 3rem 1.25rem 2.5rem; }
       section { padding: 3.5rem 1.25rem; }
+      .hero-mobile-photo {
+        display: flex !important;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+      }
+      .hero-mobile-photo img {
+        width: 68px; height: 68px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top;
+        border: 2px solid rgba(59,130,196,0.7);
+        flex-shrink: 0;
+      }
+      .hero-mobile-photo strong {
+        display: block;
+        color: #ffffff;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      .hero-mobile-photo span {
+        color: #93c5fd;
+        font-size: 0.75rem;
+      }
     }
+    .hero-mobile-photo { display: none; }
   </style>
 </head>
 <body>
@@ -718,6 +743,13 @@
 <section class="hero" style="background-color:#0d1b2a; background-image:linear-gradient(135deg,#0d1b2a 0%,#112240 60%,#0a3060 100%);">
   <div class="hero-inner">
     <div>
+      <div class="hero-mobile-photo">
+        <img src="Granado_Gonzalo_505-1368.jpg" alt="Dr. Gonzalo Granado" />
+        <div>
+          <strong>Dr. Gonzalo Granado</strong>
+          <span>Médico Psiquiatra · MN 121696</span>
+        </div>
+      </div>
       <div class="hero-badge">Psiquiatría · Psicofarmacología clínica</div>
       <h1>Dr. Gonzalo Granado<br><em>Psiquiatra especialista en<br>depresión resistente</em></h1>
       <p class="hero-subtitle">
