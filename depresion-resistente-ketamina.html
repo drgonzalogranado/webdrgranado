@@ -1,165 +1,575 @@
-<!doctype html>
-<html lang="es-AR">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Depresión resistente y tratamientos avanzados — Dr. Gonzalo Granado</title>
-<meta name="description" content="Evaluación clínica de depresión resistente y opciones terapéuticas avanzadas, incluyendo estrategias glutamatérgicas cuando están indicadas.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Depresión resistente y tratamientos con ketamina · Dr. Gonzalo Granado</title>
+  <meta name="description" content="Información sobre depresión resistente al tratamiento y tratamientos avanzados con ketamina y esketamina. Dr. Gonzalo Granado, psiquiatra en Tucumán." />
+  <meta name="keywords" content="depresión resistente tratamiento, ketamina depresión, esketamina, Spravato, antidepresivo rápido, Tucumán, psiquiatra depresión" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:      #0d1b2a;
+      --blue:      #1a4a7a;
+      --mid-blue:  #2563a8;
+      --accent:    #3b82c4;
+      --light-blue:#dbeafe;
+      --gray-100:  #f1f5f9;
+      --gray-200:  #e2e8f0;
+      --gray-400:  #94a3b8;
+      --gray-600:  #475569;
+      --gray-800:  #1e293b;
+      --white:     #ffffff;
+      --text:      #1e293b;
+      --serif:     'DM Serif Display', Georgia, serif;
+      --sans:      'DM Sans', system-ui, sans-serif;
+      --radius:    6px;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
 
-<style>
-:root{
-  --bg:#f9fafb;
-  --card:#ffffff;
-  --text:#111827;
-  --muted:#6b7280;
-  --line:#e5e7eb;
-  --accent:#12b981;
-  --shadow:0 10px 30px rgba(0,0,0,.05);
-}
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy);
+      border-bottom: 2px solid var(--mid-blue);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-brand {
+      font-family: var(--serif); color: var(--white);
+      font-size: 1rem; text-decoration: none;
+    }
+    .nav-brand span { color: #93c5fd; font-style: italic; }
+    .nav-actions { display: flex; gap: 0.75rem; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.55rem 1.1rem; border-radius: var(--radius);
+      font-family: var(--sans); font-size: 0.82rem; font-weight: 600;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: all 0.2s; white-space: nowrap;
+    }
+    .btn-outline-light {
+      background: transparent; color: var(--gray-400);
+      border: 1.5px solid rgba(255,255,255,0.15);
+    }
+    .btn-outline-light:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+    .btn-primary {
+      background: var(--mid-blue); color: var(--white);
+      box-shadow: 0 4px 14px rgba(37,99,168,0.3);
+    }
+    .btn-primary:hover { background: var(--accent); }
 
-*{box-sizing:border-box}
+    /* HERO */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #0f2d52 100%);
+      color: var(--white);
+      padding: 4rem 2rem 3.5rem;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 50% 60% at 90% 50%, rgba(37,99,168,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero-inner {
+      max-width: 860px; margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+    .page-hero .back-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: #64748b; font-size: 0.8rem; text-decoration: none;
+      margin-bottom: 1.5rem; transition: color 0.2s;
+    }
+    .page-hero .back-link:hover { color: #94a3b8; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(59,130,196,0.2); border: 1px solid rgba(59,130,196,0.4);
+      color: #93c5fd; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.3rem 0.85rem; border-radius: 100px; margin-bottom: 1rem;
+    }
+    .page-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.15; color: var(--white); margin-bottom: 1rem;
+    }
+    .page-hero h1 em { font-style: italic; color: #93c5fd; }
+    .page-hero p.lead {
+      font-size: 1.05rem; color: #94a3b8;
+      max-width: 640px; font-weight: 300;
+    }
+    .page-hero .urgent {
+      margin-top: 1.5rem;
+      padding: 0.6rem 1rem;
+      background: rgba(220,38,38,0.1);
+      border-left: 3px solid rgba(220,38,38,0.5);
+      border-radius: 0 4px 4px 0;
+      font-size: 0.78rem; color: #fca5a5;
+      max-width: 580px;
+    }
 
-body{
-  margin:0;
-  font-family:'Inter', system-ui, -apple-system, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-}
+    /* CONTENT */
+    .content { max-width: 860px; margin: 0 auto; padding: 4rem 2rem; }
 
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:40px 20px 80px;
-}
+    .section-block { margin-bottom: 4rem; }
 
-.topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:40px;
-}
+    .section-label {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--mid-blue); margin-bottom: 0.5rem;
+    }
 
-.btn{
-  padding:10px 14px;
-  border-radius:12px;
-  border:1px solid var(--line);
-  background:white;
-  font-weight:600;
-  text-decoration:none;
-  font-size:14px;
-  color:var(--text);
-  transition:.15s ease;
-}
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--navy); line-height: 1.2; margin-bottom: 1.25rem;
+    }
 
-.btn:hover{
-  border-color:var(--accent);
-  transform:translateY(-1px);
-}
+    h3 { font-family: var(--serif); font-size: 1.15rem; color: var(--navy); margin-bottom: 0.5rem; }
 
-.btn.primary{
-  background:linear-gradient(135deg,#12b98122,#10b98122);
-  border-color:#12b98166;
-}
+    p { color: var(--gray-600); margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
 
-.card{
-  background:var(--card);
-  padding:30px;
-  border-radius:18px;
-  box-shadow:var(--shadow);
-  border:1px solid var(--line);
-}
+    /* CALLOUT BOXES */
+    .callout {
+      background: var(--gray-100); border-left: 4px solid var(--mid-blue);
+      border-radius: 0 8px 8px 0; padding: 1.5rem 1.75rem; margin: 2rem 0;
+    }
+    .callout.blue {
+      background: #eff6ff; border-left-color: var(--accent);
+    }
+    .callout.amber {
+      background: #fffbeb; border-left-color: #f59e0b;
+    }
+    .callout p { color: var(--gray-600); }
+    .callout strong { color: var(--navy); }
 
-h1{
-  margin-top:0;
-  font-size:34px;
-  letter-spacing:-1px;
-}
+    /* CHECKLIST */
+    .checklist { list-style: none; padding: 0; margin: 1rem 0; }
+    .checklist li {
+      display: flex; gap: 0.75rem; align-items: flex-start;
+      padding: 0.6rem 0; border-bottom: 1px solid var(--gray-200);
+      font-size: 0.95rem; color: var(--gray-600);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: '✓'; color: var(--mid-blue); font-weight: 700;
+      flex-shrink: 0; margin-top: 0.05rem;
+    }
 
-h2{
-  margin-top:30px;
-  font-size:20px;
-}
+    /* TRATAMIENTOS GRID */
+    .tratamiento-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.25rem; margin-top: 1.5rem;
+    }
 
-p{
-  color:var(--muted);
-}
+    .tratamiento-card {
+      border: 1.5px solid var(--gray-200);
+      border-radius: 10px; padding: 1.5rem; position: relative;
+      overflow: hidden;
+    }
 
-ul{
-  color:var(--muted);
-  padding-left:20px;
-}
+    .tratamiento-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: var(--mid-blue);
+    }
 
-.footer-note{
-  margin-top:30px;
-  font-size:13px;
-  color:var(--muted);
-  border-top:1px solid var(--line);
-  padding-top:15px;
-}
-</style>
+    .tratamiento-card.esketamina::before { background: #7c3aed; }
+
+    .drug-label {
+      display: inline-block;
+      background: var(--light-blue); color: var(--mid-blue);
+      font-size: 0.7rem; font-weight: 700;
+      padding: 0.2rem 0.6rem; border-radius: 4px;
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-bottom: 0.75rem;
+    }
+
+    .drug-label.purple {
+      background: #ede9fe; color: #7c3aed;
+    }
+
+    .tratamiento-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .tratamiento-card p { font-size: 0.875rem; }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+    .tag {
+      background: var(--gray-100); color: var(--gray-600);
+      font-size: 0.72rem; padding: 0.2rem 0.6rem;
+      border-radius: 4px; font-weight: 500;
+    }
+
+    /* FAQ */
+    .faq-list { margin-top: 1.5rem; }
+    .faq-item {
+      border: 1px solid var(--gray-200);
+      border-radius: 8px; margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 1.1rem 1.25rem;
+      font-weight: 600; font-size: 0.95rem;
+      color: var(--navy); cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      user-select: none; background: var(--white);
+      transition: background 0.2s;
+    }
+    .faq-q:hover { background: var(--gray-100); }
+    .faq-q .arrow { transition: transform 0.25s; font-size: 0.8rem; color: var(--gray-400); }
+    .faq-item.open .faq-q .arrow { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.2s;
+      padding: 0 1.25rem;
+      font-size: 0.9rem; color: var(--gray-600);
+    }
+    .faq-item.open .faq-a {
+      max-height: 600px;
+      padding: 0 1.25rem 1.25rem;
+    }
+
+    /* PROCESO PASOS */
+    .steps-list { counter-reset: steps; margin-top: 1.5rem; }
+    .step-item {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      padding: 1.25rem; border: 1px solid var(--gray-200);
+      border-radius: 8px; margin-bottom: 0.75rem;
+    }
+    .step-num {
+      width: 36px; height: 36px; flex-shrink: 0;
+      background: var(--navy); color: var(--white);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-weight: 700; font-size: 0.85rem;
+    }
+    .step-item h4 { font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; font-size: 0.95rem; }
+    .step-item p { font-size: 0.875rem; margin: 0; }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, var(--navy) 0%, #112240 100%);
+      border-radius: 12px; padding: 3rem 2.5rem;
+      text-align: center; margin-top: 4rem;
+    }
+    .cta-section h2 { color: var(--white); margin-bottom: 0.75rem; }
+    .cta-section p { color: #94a3b8; margin-bottom: 2rem; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    .btn-white {
+      background: var(--white); color: var(--navy);
+      font-weight: 700;
+    }
+    .btn-white:hover { background: #f1f5f9; }
+
+    .btn-wa {
+      background: #25D366; color: var(--white);
+    }
+    .btn-wa:hover { background: #1ebe5b; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy); color: #64748b;
+      text-align: center; padding: 2rem;
+      font-size: 0.8rem;
+      border-top: 2px solid var(--mid-blue);
+    }
+    footer span { color: #94a3b8; }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .tratamiento-grid { grid-template-columns: 1fr; }
+      .content { padding: 2.5rem 1.25rem; }
+      .page-hero { padding: 2.5rem 1.25rem 2.5rem; }
+      .cta-section { padding: 2rem 1.5rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">Dr. Gonzalo Granado · <span>Psiquiatría</span></a>
+  <div class="nav-actions">
+    <a href="index.html" class="btn btn-outline-light">← Volver al inicio</a>
+    <a href="https://app.panaceamed.com.ar/citaapp/" target="_blank" rel="noopener" class="btn btn-primary">Solicitar turno</a>
+  </div>
+</nav>
 
-  <div class="topbar">
-    <a href="index.html" class="btn">← Volver</a>
-    <div>
-      <a href="https://app.panaceamed.com.ar/citaapp/" target="_blank" class="btn">Turnos online</a>
-      <a href="https://wa.me/5493815395873" target="_blank" class="btn primary">WhatsApp</a>
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="hero-badge">Psiquiatría de alta complejidad</div>
+    <h1>Depresión resistente al tratamiento<br><em>y terapias avanzadas con ketamina</em></h1>
+    <p class="lead">
+      Cuando los tratamientos estándar no alcanzan, existe un camino. Información clara para pacientes, familias y profesionales sobre los abordajes disponibles.
+    </p>
+    <div class="urgent">
+      ⚠ Esta página es informativa. Ante una urgencia o riesgo inmediato, concurrí a la guardia más cercana o llamá al <strong>107</strong>.
+    </div>
+  </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="content">
+
+  <!-- ¿QUÉ ES? -->
+  <div class="section-block">
+    <div class="section-label">Punto de partida</div>
+    <h2>¿Qué es la depresión resistente al tratamiento?</h2>
+    <p>
+      La depresión resistente al tratamiento (DRT) es aquella que no responde de manera adecuada luego de dos o más ensayos terapéuticos con antidepresivos, administrados en dosis correctas y durante el tiempo suficiente. No se trata de "mucha depresión", sino de una forma de la enfermedad con características biológicas particulares que requiere estrategias específicas.
+    </p>
+    <p>
+      Se estima que entre el 20 y el 30% de los pacientes con depresión mayor no logra una respuesta satisfactoria con los tratamientos de primera línea. Esto no significa que no tenga solución: significa que requiere una evaluación más profunda y un enfoque de mayor complejidad.
+    </p>
+
+    <div class="callout blue">
+      <p><strong>Importante:</strong> Antes de hablar de resistencia, es fundamental descartar adherencia incompleta al tratamiento, diagnóstico incorrecto (por ejemplo, que sea un trastorno bipolar no reconocido), comorbilidades médicas o factores de estilo de vida que interfieren con la respuesta.</p>
     </div>
   </div>
 
-  <div class="card">
-    <h1>Depresión resistente y tratamientos avanzados</h1>
+  <!-- EVALUACIÓN -->
+  <div class="section-block">
+    <div class="section-label">Proceso diagnóstico</div>
+    <h2>¿Qué implica una evaluación por depresión resistente?</h2>
+    <p>Una evaluación rigurosa es la base de cualquier intervención avanzada. Los aspectos que se revisan incluyen:</p>
 
-    <p>
-      Cuando un cuadro depresivo no responde adecuadamente a tratamientos estándar,
-      es fundamental realizar una reevaluación diagnóstica y terapéutica integral.
-      El objetivo no es “agregar medicación”, sino comprender con precisión qué está
-      ocurriendo clínica y biológicamente.
-    </p>
-
-    <h2>¿Qué se considera depresión resistente?</h2>
-    <p>
-      En términos clínicos, suele hablarse de resistencia cuando no hay respuesta
-      suficiente tras ensayos adecuados de antidepresivos en dosis y tiempo correctos.
-      Sin embargo, cada caso requiere análisis individual.
-    </p>
-
-    <h2>Evaluación integral</h2>
-    <ul>
-      <li>Revisión de tratamientos previos y adherencia.</li>
-      <li>Reevaluación diagnóstica (bipolaridad, ansiedad, trauma).</li>
-      <li>Comorbilidades médicas o farmacológicas.</li>
-      <li>Factores de sueño, estrés y contexto psicosocial.</li>
+    <ul class="checklist">
+      <li>Historia detallada de tratamientos previos: fármacos, dosis, duración y respuesta</li>
+      <li>Adherencia real al tratamiento indicado</li>
+      <li>Reevaluación diagnóstica: descartar bipolaridad, trastornos de ansiedad primarios, trauma complejo</li>
+      <li>Comorbilidades médicas que afectan la respuesta (hipotiroidismo, déficit de vitamina D, apnea del sueño, entre otras)</li>
+      <li>Interacciones farmacológicas o fármacos que interfieren con el efecto antidepresivo</li>
+      <li>Factores psicosociales sostenidos: estrés crónico, contexto vincular, condiciones de vida</li>
+      <li>Calidad del sueño y ritmos circadianos</li>
     </ul>
+  </div>
 
+  <!-- OPCIONES TERAPÉUTICAS -->
+  <div class="section-block">
+    <div class="section-label">Tratamientos disponibles</div>
     <h2>Opciones terapéuticas avanzadas</h2>
     <p>
-      Según el perfil clínico pueden considerarse estrategias de segunda o tercera línea,
-      combinaciones racionales y, cuando está indicado bajo protocolo específico,
-      tratamientos moduladores del sistema glutamatérgico como ketamina o esketamina.
+      Según el perfil clínico de cada paciente, pueden considerarse distintas estrategias. Entre los abordajes de mayor evidencia en depresión resistente se encuentran:
     </p>
 
-    <h2>Seguimiento</h2>
-    <p>
-      Toda estrategia avanzada requiere monitoreo cercano, evaluación de respuesta,
-      análisis de efectos adversos y objetivos terapéuticos claros.
-    </p>
+    <div class="tratamiento-grid">
 
-    <div class="footer-note">
-      Esta información no reemplaza una consulta médica. Ante urgencia o riesgo inmediato,
-      acudir a un servicio de guardia.
+      <div class="tratamiento-card">
+        <div class="drug-label">Ketamina</div>
+        <h3>Ketamina intravenosa</h3>
+        <p>
+          Anestésico con potente efecto antidepresivo a través del bloqueo de receptores NMDA (glutamatérgicos). Produce alivio sintomático en horas, a diferencia de los antidepresivos clásicos que tardan semanas.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Acción rápida</span>
+          <span class="tag">Uso supervisado</span>
+          <span class="tag">Centro especializado</span>
+        </div>
+      </div>
+
+      <div class="tratamiento-card esketamina">
+        <div class="drug-label purple">Esketamina (Spravato®)</div>
+        <h3>Esketamina intranasal</h3>
+        <p>
+          Versión aprobada por FDA y ANMAT del isómero activo de la ketamina. Se administra en forma intranasal bajo supervisión médica en centros habilitados. Indicada específicamente para depresión resistente.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Aprobación regulatoria</span>
+          <span class="tag">Supervisión médica</span>
+          <span class="tag">Protocolo específico</span>
+        </div>
+      </div>
+
     </div>
 
+    <div class="callout">
+      <p>
+        <strong>Otras estrategias de segunda y tercera línea</strong> incluyen augmentación con litio, antipsicóticos atípicos o agonistas dopaminérgicos; combinaciones farmacológicas racionales; optimización del tratamiento psicoterápico (especialmente TCC o terapias basadas en trauma); y en casos seleccionados, estimulación magnética transcraneal (TMS) o terapia electroconvulsivante (TEC).
+      </p>
+    </div>
+  </div>
+
+  <!-- CÓMO FUNCIONA -->
+  <div class="section-block">
+    <div class="section-label">Mecanismo de acción</div>
+    <h2>¿Por qué funciona la ketamina en la depresión?</h2>
+    <p>
+      Los antidepresivos tradicionales actúan principalmente sobre los sistemas serotoninérgico y noradrenérgico. La ketamina tiene un mecanismo completamente distinto: actúa bloqueando los receptores NMDA del sistema glutamatérgico, que es el principal sistema de neurotransmisión excitatorio del cerebro.
+    </p>
+    <p>
+      Este bloqueo produce una cascada de eventos que incluye la liberación de factores neurotróficos (especialmente BDNF) y la restauración de conexiones sinápticas que se deterioran durante la depresión crónica. El resultado es un alivio de los síntomas en horas o días, mucho más rápido que con los antidepresivos clásicos.
+    </p>
+
+    <div class="callout amber">
+      <p>
+        <strong>Para tener en cuenta:</strong> El efecto antidepresivo de la ketamina puede ser de duración variable. En muchos casos se requiere un protocolo de sesiones y posteriormente estrategias de mantenimiento. No es una solución única ni definitiva por sí sola, sino parte de un plan terapéutico integral.
+      </p>
+    </div>
+  </div>
+
+  <!-- PROCESO -->
+  <div class="section-block">
+    <div class="section-label">Paso a paso</div>
+    <h2>¿Cómo es el proceso de tratamiento?</h2>
+
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div>
+          <h4>Consulta inicial y evaluación</h4>
+          <p>Se realiza una historia clínica completa, revisión de tratamientos previos y evaluación de la indicación. No todo paciente con depresión es candidato; la selección es parte del proceso.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div>
+          <h4>Derivación a centro especializado</h4>
+          <p>Los protocolos con ketamina y esketamina requieren administración supervisada en un centro habilitado. Se gestiona la derivación y se coordina con el equipo tratante.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div>
+          <h4>Administración del protocolo</h4>
+          <p>Se realizan las sesiones de infusión o administración intranasal según el protocolo indicado (generalmente sesiones a lo largo de 2 a 3 semanas en la fase de inducción).</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div>
+          <h4>Seguimiento y mantenimiento</h4>
+          <p>Evaluación de respuesta clínica, planificación de la estrategia de mantenimiento y seguimiento psiquiátrico continuado para consolidar los resultados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIÉN ES CANDIDATO -->
+  <div class="section-block">
+    <div class="section-label">Perfil del paciente</div>
+    <h2>¿Quién puede ser candidato?</h2>
+    <p>Un tratamiento con ketamina o esketamina puede estar indicado en pacientes que:</p>
+    <ul class="checklist">
+      <li>Han realizado dos o más ensayos adecuados de antidepresivos sin respuesta suficiente</li>
+      <li>Presentan síntomas depresivos severos o ideación suicida persistente que requieren respuesta rápida</li>
+      <li>Han sido evaluados y descartadas causas secundarias o diagnósticos alternativos</li>
+      <li>No presentan contraindicaciones específicas (algunos trastornos cardiovasculares, psicosis activa, antecedentes de abuso de sustancias disociativas, entre otros)</li>
+      <li>Tienen red de apoyo y condiciones para el seguimiento sostenido</li>
+    </ul>
+    <p style="margin-top:1rem">La decisión final requiere una evaluación clínica individualizada. No existe una indicación automática.</p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-block">
+    <div class="section-label">Preguntas frecuentes</div>
+    <h2>Lo que los pacientes suelen preguntar</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿Es segura la ketamina para el tratamiento de la depresión?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          <p>Sí, cuando se usa en el contexto de un protocolo médico supervisado. Las dosis empleadas para la depresión son considerablemente más bajas que las anestésicas. El principal riesgo que se monitorea es la disociación transitoria durante la sesión, que suele resolverse espontáneamente. No se administra en domicilio ni sin supervisión médica.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿La ketamina genera adicción?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          <p>El potencial de abuso existe cuando se usa de manera recreativa o no supervisada. En el contexto de un protocolo médico con sesiones controladas, la frecuencia y dosis están diseñadas para minimizar este riesgo. Se evalúa de forma individualizada si hay antecedentes de consumo problemático de sustancias, lo cual puede representar una contraindicación relativa.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿Cuántas sesiones son necesarias?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          <p>Los protocolos más utilizados en fase de inducción contemplan entre 4 y 6 sesiones en un período de 2 a 3 semanas. La necesidad de sesiones de mantenimiento posterior depende de la respuesta individual y la estrategia terapéutica global.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿La esketamina (Spravato®) está aprobada en Argentina?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          <p>Sí. La esketamina intranasal (Spravato®) cuenta con aprobación de la FDA (EE. UU.) para depresión resistente al tratamiento y depresión mayor con ideación suicida aguda, y tiene aprobación de ANMAT en Argentina. Su administración debe realizarse en un centro de salud habilitado bajo supervisión directa de un profesional.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿Cuánto tiempo dura el efecto?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          <p>La duración del efecto antidepresivo varía según el paciente. Algunos obtienen remisión prolongada, mientras que otros requieren sesiones de mantenimiento periódicas. Por eso es fundamental integrar este tratamiento dentro de un plan terapéutico más amplio que incluya seguimiento psiquiátrico y, cuando corresponde, psicoterapia.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ¿Este tratamiento reemplaza a los antidepresivos?
+          <span class="arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          <p>No necesariamente. En muchos casos la ketamina o esketamina se usa como complemento o puente mientras se optimiza el tratamiento farmacológico de fondo. La estrategia integrada —combinando distintos abordajes— suele dar mejores resultados que cualquier tratamiento aislado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>¿Querés consultar sobre tu situación específica?</h2>
+    <p>Cada caso requiere una evaluación individualizada. Podés iniciar una consulta online o presencial en Tucumán para evaluar opciones juntos.</p>
+    <div class="cta-actions">
+      <a href="https://app.panaceamed.com.ar/citaapp/" target="_blank" rel="noopener" class="btn btn-white" style="padding:0.8rem 1.75rem; font-size:0.9rem;">
+        Agendar turno online
+      </a>
+      <a href="https://wa.me/5493815395873?text=Hola%20Dr.%20Granado%2C%20quiero%20consultar%20sobre%20depresi%C3%B3n%20resistente%20y%20tratamientos%20con%20ketamina." target="_blank" rel="noopener" class="btn btn-wa" style="padding:0.8rem 1.75rem; font-size:0.9rem;">
+        Consultar por WhatsApp
+      </a>
+    </div>
   </div>
 
 </div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Dr. Gonzalo Granado · Médico Psiquiatra · MN 121696 · MP 7327</span><br>
+  <span style="font-size:0.72rem; margin-top:0.25rem; display:block;">Yerba Buena &amp; Concepción, Tucumán · Atención presencial y online</span>
+</footer>
+
+<script>
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
